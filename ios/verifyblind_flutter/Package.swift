@@ -12,13 +12,16 @@ let package = Package(
         .library(name: "verifyblind-flutter", targets: ["verifyblind_flutter"])
     ],
     dependencies: [
-        .package(name: "FlutterFramework", path: "../FlutterFramework")
+        .package(name: "FlutterFramework", path: "../FlutterFramework"),
+        // The native SDK does all the work (key pair, network, decryption). This plugin only bridges it.
+        .package(url: "https://github.com/VerifyBlind/sdk-ios", from: "2.3.1")
     ],
     targets: [
         .target(
             name: "verifyblind_flutter",
             dependencies: [
-                .product(name: "FlutterFramework", package: "FlutterFramework")
+                .product(name: "FlutterFramework", package: "FlutterFramework"),
+                .product(name: "VerifyBlind", package: "sdk-ios")
             ],
             resources: [
                 // If your plugin requires a privacy manifest, for example if it uses any required

@@ -23,7 +23,7 @@ dependencies:
   verifyblind_flutter: ^0.1.0
 ```
 
-Gerekenler: Flutter 3.24+, Android `minSdk 24` (Java 17), iOS 13+ ve Swift Package Manager.
+Gerekenler: Flutter 3.24+, Android `minSdk 24` (Java 17), iOS 15+ ve Swift Package Manager.
 
 Ayrıca bir sunucu tarafı gerekir (API anahtarı yalnız orada durur):
 
@@ -148,7 +148,7 @@ dependencies:
   verifyblind_flutter: ^0.1.0
 ```
 
-Requirements: Flutter 3.24+, Android `minSdk 24` (Java 17), iOS 13+ with Swift Package Manager.
+Requirements: Flutter 3.24+, Android `minSdk 24` (Java 17), iOS 15+ with Swift Package Manager.
 
 You also need a server side (the API key lives only there):
 

@@ -1,4 +1,4 @@
-group = "com.verifyblind.verifyblind_flutter"
+group = "com.verifyblind.flutter"
 version = "1.0-SNAPSHOT"
 
 buildscript {
@@ -26,7 +26,7 @@ plugins {
 }
 
 android {
-    namespace = "com.verifyblind.verifyblind_flutter"
+    namespace = "com.verifyblind.flutter"
 
     compileSdk = 36
 
@@ -72,6 +72,9 @@ kotlin {
 }
 
 dependencies {
+    // The native SDK does all the work (key pair, network, decryption). This plugin only bridges it.
+    implementation("com.verifyblind:verifyblind-android:1.0.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.mockito:mockito-core:5.0.0")
 }

@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="verifyblind_flutter_example"
+        android:label="VerifyBlind Flutter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -24,6 +24,18 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <!-- Return deep link: VerifyBlind opens verifyblinddemo://callback?nonce=...&status=...
+                 when it is done. The scheme must also be the "App Return Scheme" in the Partner
+                 Portal (verifyblinddemo is registered for the test partner behind test.verifyblind.com). -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="verifyblinddemo" android:host="callback" />
+            </intent-filter>
+            <!-- The return link only brings the app to the front; the app polls on resume.
+                 Do not let Flutter push it as a Navigator route. -->
+            <meta-data android:name="flutter_deeplinking_enabled" android:value="false" />
         </activity>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
