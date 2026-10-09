@@ -37,11 +37,16 @@ jobs:
   ios:
     runs-on: macos-15
     steps:
+      # Swift Package Manager takes a local package's identity from its folder name. The example depends on
+      # the plugin by path (../), so the checkout folder must be named like the package (verifyblind_flutter),
+      # as it is in the pub cache for apps that install the plugin from pub.dev.
       - uses: actions/checkout@v4
+        with:
+          path: verifyblind_flutter
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
       - run: flutter config --enable-swift-package-manager
       - name: Build example for iOS (no signing)
-        working-directory: example
+        working-directory: verifyblind_flutter/example
         run: flutter build ios --debug --no-codesign
