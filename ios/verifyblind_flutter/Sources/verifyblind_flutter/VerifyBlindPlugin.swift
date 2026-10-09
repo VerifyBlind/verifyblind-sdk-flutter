@@ -2,7 +2,7 @@ import Flutter
 import UIKit
 import VerifyBlind
 
-/// Thin bridge to the VerifyBlind iOS SDK (Swift Package `VerifyBlind/sdk-ios`). No crypto or
+/// Thin bridge to the VerifyBlind iOS SDK (Swift Package `VerifyBlind/verifyblind-sdk-ios`). No crypto or
 /// network code here.
 ///
 /// One native `VerifyBlindSDK` per Dart `VerifyBlind` object (keyed by its id), kept alive between

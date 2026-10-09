@@ -1,7 +1,7 @@
 /// Flutter wrapper for the VerifyBlind native mobile SDKs.
 ///
 /// Android: `com.verifyblind:verifyblind-android` (Maven Central).
-/// iOS: Swift Package `https://github.com/VerifyBlind/sdk-ios`.
+/// iOS: Swift Package `https://github.com/VerifyBlind/verifyblind-sdk-ios`.
 ///
 /// The phone never decides. Send the `token` from [VerifyBlind.checkVerificationResult]
 /// to your server; your server verifies the signature and the condition it asked for.

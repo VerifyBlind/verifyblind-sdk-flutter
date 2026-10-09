@@ -3,8 +3,8 @@
 Flutter plugin for [VerifyBlind](https://verifyblind.com). It wraps the official native SDKs; it does
 not reimplement them.
 
-- Android: [`com.verifyblind:verifyblind-android:1.0.1`](https://github.com/VerifyBlind/sdk-android) (Maven Central)
-- iOS: Swift Package [`VerifyBlind/sdk-ios`](https://github.com/VerifyBlind/sdk-ios) from 2.3.1
+- Android: [`com.verifyblind:verifyblind-android:1.0.1`](https://github.com/VerifyBlind/verifyblind-sdk-android) (Maven Central)
+- iOS: Swift Package [`VerifyBlind/verifyblind-sdk-ios`](https://github.com/VerifyBlind/verifyblind-sdk-ios) from 2.3.1
 
 **[Türkçe](#türkçe) · [English](#english)**
 
@@ -34,7 +34,7 @@ Ayrıca bir sunucu tarafı gerekir (API anahtarı yalnız orada durur):
   kez kullanır ve sonucu kendi sakladığı koşula göre okur.
 
 Ayrıntılar: [ai-integration.md](https://verifyblind.com/ai-integration.md) ve
-[sdk-android README](https://github.com/VerifyBlind/sdk-android).
+[verifyblind-sdk-android README](https://github.com/VerifyBlind/verifyblind-sdk-android).
 
 ### Android
 
@@ -165,7 +165,7 @@ You also need a server side (the API key lives only there):
   nonce once and reads the result against the condition it stored.
 
 Details: [ai-integration.md](https://verifyblind.com/ai-integration.md) and the
-[sdk-android README](https://github.com/VerifyBlind/sdk-android).
+[verifyblind-sdk-android README](https://github.com/VerifyBlind/verifyblind-sdk-android).
 
 ### Android
 
