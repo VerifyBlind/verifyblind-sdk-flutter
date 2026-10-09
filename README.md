@@ -53,6 +53,11 @@ Ayrıntılar: [ai-integration.md](https://verifyblind.com/ai-integration.md) ve
 
 3. Aynı şemayı (`myapp`) Partner Portal'da **Ayarlar → App Return Scheme** alanına kaydedin. VerifyBlind
    yalnız şeması kayıtlı olanla eşleşen geri dönüş adresini açar; alan boşsa uygulamanıza geri dönmez.
+4. Geri dönüş adresi yalnız uygulamayı öne getirir; sonucu `checkVerificationResult` ile siz sorarsınız.
+   Uygulamanız Flutter'ın derin bağlantı yönlendirmesini kullanmıyorsa, `myapp://callback` adresinin
+   `Navigator`'a rota olarak gitmemesi için activity içine şunu ekleyin:
+   `<meta-data android:name="flutter_deeplinking_enabled" android:value="false" />`
+   (`go_router` gibi bir yönlendirici kullanıyorsanız `/callback` rotasını boş bir sayfa olarak tanımlayın.)
 
 ### iOS
 
@@ -72,6 +77,7 @@ Ayrıntılar: [ai-integration.md](https://verifyblind.com/ai-integration.md) ve
 ```
 
 3. Partner Portal kaydı Android ile aynı (bir şema iki platformu da kapsar).
+4. Android'deki 4. maddenin karşılığı: `Info.plist` içinde `FlutterDeepLinkingEnabled` = `false`.
 
 VerifyBlind uygulaması Universal Link (`https://app.verifyblind.com/request`) ile açıldığı için
 `LSApplicationQueriesSchemes` gerekmez.
@@ -179,6 +185,11 @@ Details: [ai-integration.md](https://verifyblind.com/ai-integration.md) and the
 3. Register the same scheme (`myapp`) in the Partner Portal under **Settings → App Return Scheme**.
    VerifyBlind only opens a return URL whose scheme matches the registered one; if the field is empty it
    does not return to your app.
+4. The return link only brings your app to the front; you read the result with `checkVerificationResult`.
+   If your app does not use Flutter's deep-link routing, add this inside the activity so
+   `myapp://callback` is not pushed to the `Navigator` as a route:
+   `<meta-data android:name="flutter_deeplinking_enabled" android:value="false" />`
+   (with a router such as `go_router`, define a no-op `/callback` route instead.)
 
 ### iOS
 
@@ -198,6 +209,7 @@ Details: [ai-integration.md](https://verifyblind.com/ai-integration.md) and the
 ```
 
 3. The Partner Portal entry is the same as for Android (one scheme covers both platforms).
+4. Same as Android step 4: set `FlutterDeepLinkingEnabled` to `false` in `Info.plist`.
 
 The VerifyBlind app is opened with a Universal Link (`https://app.verifyblind.com/request`), so
 `LSApplicationQueriesSchemes` is not needed.
